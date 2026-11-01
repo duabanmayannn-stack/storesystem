@@ -43,6 +43,8 @@ function updateCartUI() {
         cartItemsContainer.innerHTML = '<p class="empty-msg">No items selected</p>';
         subtotalElement.textContent = '₱0.00';
         totalElement.textContent = '₱0.00';
+        document.getElementById('cashInput').value = '';
+        document.getElementById('changeVal').textContent = '₱0.00';
         return;
     }
 
@@ -71,9 +73,36 @@ function updateCartUI() {
     cartItemsContainer.innerHTML = cartHTML;
     subtotalElement.textContent = `₱${grandTotal.toFixed(2)}`;
     totalElement.textContent = `₱${grandTotal.toFixed(2)}`;
+    
+    // Automatic re-compute ng change kung may nakalagay na sa cash input
+    calculateChange();
 }
 
-// 4. Pay / Checkout Button
+// 4. Calculate Change Automatically when typing cash
+function calculateChange() {
+    let totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const cashInput = document.getElementById('cashInput').value;
+    const changeElement = document.getElementById('changeVal');
+
+    if (cashInput === "" || isNaN(cashInput)) {
+        changeElement.textContent = '₱0.00';
+        changeElement.style.color = "#2e7d32";
+        return;
+    }
+
+    let cashGiven = parseFloat(cashInput);
+    let change = cashGiven - totalAmount;
+
+    if (change >= 0) {
+        changeElement.textContent = `₱${change.toFixed(2)}`;
+        changeElement.style.color = "#2e7d32"; // Green kung sapat o sobra
+    } else {
+        changeElement.textContent = `-₱${Math.abs(change).toFixed(2)}`;
+        changeElement.style.color = "#e53935"; // Red kung kulang pa ang pera
+    }
+}
+
+// 5. Pay / Checkout Button
 function processCheckout() {
     if (cart.length === 0) {
         alert("Pahabol: Mag-select sa og items bag-o mag-pay!");
@@ -81,14 +110,30 @@ function processCheckout() {
     }
     
     let totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    alert(`Total Amount: ₱${totalAmount.toFixed(2)}\n\nSalamat sa pagpalit! Order successful.`);
+    let cashGivenInput = document.getElementById('cashInput').value;
+
+    if (cashGivenInput === "" || isNaN(cashGivenInput)) {
+        alert("Palihog og butang sa kwarta (Cash Given) sa dili pa mag-checkout!");
+        return;
+    }
+
+    let cashGiven = parseFloat(cashGivenInput);
+
+    if (cashGiven < totalAmount) {
+        alert("Kulang ang kwarta! Palihog og dugang sa cash.");
+        return;
+    }
+
+    let change = cashGiven - totalAmount;
+    alert(`Total: ₱${totalAmount.toFixed(2)}\nCash: ₱${cashGiven.toFixed(2)}\nChange: ₱${change.toFixed(2)}\n\nSalamat sa pagpalit! Order successful.`);
     
-    // Reset cart after payment
+    // Reset cart and inputs after payment
     cart = [];
+    document.getElementById('cashInput').value = '';
     updateCartUI();
 }
 
-// 5. Category Filtering
+// 6. Category Filtering & Search
 document.addEventListener("DOMContentLoaded", () => {
     const categoryTabs = document.querySelectorAll(".cat-item");
     const productCards = document.querySelectorAll(".item-card");
@@ -104,7 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 6. Live Search Filter
     searchInput.addEventListener("input", () => {
         const activeCategory = document.querySelector(".cat-item.active").getAttribute("data-cat");
         filterProducts(activeCategory, searchInput.value);
