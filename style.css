@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f7f5ef;
+    font-family: Arial, sans-serif;
+}
+
+/* POS Main Container (Split Screen) */
+.pos-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Left Side - Products Area */
+.main-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Navigation & Search Bar */
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.search-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    height: 38px;
+    font-size: 15px;
+    border-radius: 6px;
+}
+
+/* Side Navigation Drawer */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 12px 15px 12px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+}
+
+/* Categories Bar */
+.category {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.cat-item {
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    white-space: nowrap;
+    cursor: pointer;
+    text-align: center;
+}
+
+.cat-item.active {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+/* PRODUCT CARDS GRID SYSTEM */
+.items {
+    display: grid;
+    /* Auto-fit responsive columns so cards don't get overly huge */
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+/* Individual Product Card (Compact & Readable) */
+.item-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: row; /* Ginawa nating pahalang */
+    justify-content: space-between; /* Hiwalay ang text sa kaliwa at button sa kanan */
+    align-items: center; /* I-center nang patayo */
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.item-card:hover {
+    border-color: #ff7900;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+}
+
+.card-info p.item-price {
+    color: #e53935;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Plus (+) Button inside card */
+.add-btn {
+    background-color: #ff7900;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    min-width: 32px; /* Para dili ma-squash ang button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s ease;
+}
+
+.add-btn:hover {
+    background-color: #e06b00;
+}
+
+/* Right Side - POS Total / Cart Panel */
+.cart-section {
+    width: 320px;
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.card-info h2 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Para kung mahaba ang pangalan, may ... sa dulo */
+    margin: 0;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.cart-item-price {
+    color: #777;
+    font-size: 12px;
+}
+
+.cart-summary {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.summary-row.total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #111;
+    margin-top: 10px;
+}
+
+.checkout-btn {
+    width: 100%;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s;
+}
+
+.checkout-btn:hover {
+    background-color: #256628;
+}
+
+/* Mobile Responsive Adjustments */
+@media screen and (max-width: 850px) {
+    .pos-container {
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+    }
+
+    .cart-section {
+        width: 100%;
+        border-left: none;
+        border-top: 2px solid #ddd;
+    }
+}

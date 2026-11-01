@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Store ni ailyn</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+	</div>
+
+	<!-- Main POS Container -->
+	<div class="pos-container">
+
+		<!-- Left Side: Products Section -->
+		<div class="main-content">
+			<div class="top-bar">
+				<span class="menu-icon" onclick="openNav()">&#9776;</span>
+				<input type="text" id="searchInput" placeholder="Search product..." class="search-input">
+			</div>
+
+			<!-- Categories Bar -->
+			<div class="category" id="categoryBar">
+				<p class="cat-item active" data-cat="All">All</p>
+				<p class="cat-item" data-cat="Canned Goods">Canned Goods</p>
+				<p class="cat-item" data-cat="Condiments">Seasonings</p>
+				<p class="cat-item" data-cat="Noodles">Noodles</p>
+				<p class="cat-item" data-cat="Drinks">Milk and Coffee</p>
+				<p class="cat-item" data-cat="Personal Care">Personal Care</p>
+				<p class="cat-item" data-cat="Laundry">Laundry</p>
+			</div>
+
+			<!-- Product Cards Container -->
+			<div class="items" id="itemsContainer">
+
+				<!-- Canned Goods -->
+				<div class="item-card" data-category="Canned Goods">
+					<div class="card-info">
+						<h3>Fresca Tuna</h3>
+						<p class="item-price">₱30.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Fresca Tuna', 30)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Canned Goods">
+					<div class="card-info">
+						<h3>Youngs Town</h3>
+						<p class="item-price">₱27.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Youngs Town', 27)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Canned Goods">
+					<div class="card-info">
+						<h3>Mecado Tinapa</h3>
+						<p class="item-price">₱25.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Mecado Tinapa', 25)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Canned Goods">
+					<div class="card-info">
+						<h3>Lucky 7</h3>
+						<p class="item-price">₱25.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Lucky 7', 25)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Canned Goods">
+					<div class="card-info">
+						<h3>Argentina Corn Beef</h3>
+						<p class="item-price">₱40.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Argentina Corn Beef', 40)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Canned Goods">
+					<div class="card-info">
+						<h3>Lucky Corn Beef</h3>
+						<p class="item-price">₱25.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Lucky Corn Beef', 25)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Canned Goods">
+					<div class="card-info">
+						<h3>Lami Beef Loaf</h3>
+						<p class="item-price">₱27.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Lami Beef Loaf', 27)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Canned Goods">
+					<div class="card-info">
+						<h3>San Marino Corn Tuna</h3>
+						<p class="item-price">₱43.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('San Marino Corn Tuna', 43)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Canned Goods">
+					<div class="card-info">
+						<h3>555 Tuna Mechado</h3>
+						<p class="item-price">₱34.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('555 Tuna Mechado', 34)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Canned Goods">
+					<div class="card-info">
+						<h3>555 Tuna Adobo</h3>
+						<p class="item-price">₱35.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('555 Tuna Adobo', 35)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+
+				<!-- Condiments and Cooking Ingredients -->
+				<div class="item-card" data-category="Condiments">
+					<div class="card-info">
+						<h3>Silver Swan Suka</h3>
+						<p class="item-price">₱11.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Silver Swan Suka', 11)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Condiments">
+					<div class="card-info">
+						<h3>Mafran Banana Ketchup</h3>
+						<p class="item-price">₱13.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Mafran Banana Ketchup', 13)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Condiments">
+					<div class="card-info">
+						<h3>Monggos</h3>
+						<p class="item-price">₱35.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Monggos', 35)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Condiments">
+					<div class="card-info">
+						<h3>Magic Sarap</h3>
+						<p class="item-price">₱9.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Magic Sarap', 9)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Condiments">
+					<div class="card-info">
+						<h3>Sinigang Mix</h3>
+						<p class="item-price">₱11.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Sinigang Mix', 11)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Condiments">
+					<div class="card-info">
+						<h3>Brown Sugar</h3>
+						<p class="item-price">₱20.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Brown Sugar', 20)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Condiments">
+					<div class="card-info">
+						<h3>Tuyo</h3>
+						<p class="item-price">₱15.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Tuyo', 15)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+
+				<!-- Noodles and Pasta -->
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Pancit Yanyan</h3>
+						<p class="item-price">₱12.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Pancit Yanyan', 12)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Miswa</h3>
+						<p class="item-price">₱9.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Miswa', 9)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Suki Bihon</h3>
+						<p class="item-price">₱17.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Suki Bihon', 17)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Vitsin</h3>
+						<p class="item-price">₱7.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Vitsin', 7)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Crispy Fry</h3>
+						<p class="item-price">₱23.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Crispy Fry', 23)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Golden Q Bihon</h3>
+						<p class="item-price">₱22.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Golden Q Bihon', 22)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Pancit Canton</h3>
+						<p class="item-price">₱15.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Pancit Canton', 15)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Lucky Me Noodles</h3>
+						<p class="item-price">₱12.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Lucky Me Noodles', 12)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Chicken Noodles</h3>
+						<p class="item-price">₱12.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Chicken Noodles', 12)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Quick Chow</h3>
+						<p class="item-price">₱11.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Quick Chow', 11)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Noodles Spicy</h3>
+						<p class="item-price">₱13.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Noodles Spicy', 13)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Noodles">
+					<div class="card-info">
+						<h3>Sotanghon</h3>
+						<p class="item-price">₱15.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Sotanghon', 15)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+
+				<!-- Coffee and Drinks -->
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Ovaltine</h3>
+						<p class="item-price">₱11.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Ovaltine', 11)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Milo</h3>
+						<p class="item-price">₱14.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Milo', 14)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Nescafe Twin Pack</h3>
+						<p class="item-price">₱19.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Nescafe Twin Pack', 19)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Kopiko Brown Twin</h3>
+						<p class="item-price">₱17.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Kopiko Brown Twin', 17)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Nescafe Original</h3>
+						<p class="item-price">₱19.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Nescafe Original', 19)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Great Taste</h3>
+						<p class="item-price">₱14.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Great Taste', 14)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Nestea Lemon</h3>
+						<p class="item-price">₱23.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Nestea Lemon', 23)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+
+				<!-- Milk Products -->
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Bear Brand Choco</h3>
+						<p class="item-price">₱15.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Bear Brand Choco', 15)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Energen Choco</h3>
+						<p class="item-price">₱12.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Energen Choco', 12)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Tablia</h3>
+						<p class="item-price">₱10.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Tablia', 10)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Energen Milk</h3>
+						<p class="item-price">₱12.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Energen Milk', 12)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Alaska</h3>
+						<p class="item-price">₱11.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Alaska', 11)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Birch Tree</h3>
+						<p class="item-price">₱14.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Birch Tree', 14)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Condense Jersey</h3>
+						<p class="item-price">₱45.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Condense Jersey', 45)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Alaska Evaporada</h3>
+						<p class="item-price">₱39.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Alaska Evaporada', 39)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+
+				<!-- Personal Care -->
+				<div class="item-card" data-category="Personal Care">
+					<div class="card-info">
+						<h3>Sister Napkin</h3>
+						<p class="item-price">₱6.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Sister Napkin', 6)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Personal Care">
+					<div class="card-info">
+						<h3>Sister Night Napkin</h3>
+						<p class="item-price">₱7.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Sister Night Napkin', 7)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Personal Care">
+					<div class="card-info">
+						<h3>Sabon Bar</h3>
+						<p class="item-price">₱10.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Sabon Bar', 10)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Personal Care">
+					<div class="card-info">
+						<h3>Palmolive Shampoo</h3>
+						<p class="item-price">₱10.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Palmolive Shampoo', 10)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Personal Care">
+					<div class="card-info">
+						<h3>Cream Silk</h3>
+						<p class="item-price">₱10.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Cream Silk', 10)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+
+				<!-- Laundry Products -->
+				<div class="item-card" data-category="Laundry">
+					<div class="card-info">
+						<h3>Zonrox Color Safe</h3>
+						<p class="item-price">₱33.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Zonrox Color Safe', 33)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Laundry">
+					<div class="card-info">
+						<h3>Zonrox Lemon</h3>
+						<p class="item-price">₱23.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Zonrox Lemon', 23)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Laundry">
+					<div class="card-info">
+						<h3>Surf Powder</h3>
+						<p class="item-price">₱10.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Surf Powder', 10)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Laundry">
+					<div class="card-info">
+						<h3>Downy</h3>
+						<p class="item-price">₱10.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Downy', 10)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Laundry">
+					<div class="card-info">
+						<h3>Calla Powder</h3>
+						<p class="item-price">₱10.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Calla Powder', 10)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Laundry">
+					<div class="card-info">
+						<h3>Ariel Powder</h3>
+						<p class="item-price">₱18.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Ariel Powder', 18)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Laundry">
+					<div class="card-info">
+						<h3>Pride Calamansi</h3>
+						<p class="item-price">₱10.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Pride Calamansi', 10)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Laundry">
+					<div class="card-info">
+						<h3>Champion Bar</h3>
+						<p class="item-price">₱10.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Champion Bar', 10)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+
+						<div class="item-card" data-category="Laundry">
+					<div class="card-info">
+						<h3>Safe Guard Jumbo</h3>
+						<p class="item-price">₱32.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Safe Guard Jumbo', 32)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+
+						<div class="item-card" data-category="Laundry">
+					<div class="card-info">
+						<h3>Bioderm</h3>
+						<p class="item-price">₱20.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Bioderm', 20)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+
+				<!-- Other Items -->
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Nescafe Stick</h3>
+						<p class="item-price">₱9.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Nescafe Stick', 9)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Drinks">
+					<div class="card-info">
+						<h3>Nescafe 25 grms</h3>
+						<p class="item-price">₱27.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Nescafe 25 grms', 28)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<div class="item-card" data-category="Condiments">
+					<div class="card-info">
+						<h3>Posporo</h3>
+						<p class="item-price">₱5.00</p>
+					</div>
+					<button class="add-btn" onclick="addToCart('Posporo', 5)"><i class="fa-solid fa-plus"></i></button>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Right Side: POS Cart / Total Section -->
+		<div class="cart-section">
+			<h2>Current Order</h2>
+			<div class="cart-items" id="cartItems">
+				<p class="empty-msg">No items selected</p>
+			</div>
+
+			<!-- Total Summary -->
+			<div class="cart-summary">
+				<div class=
+				"summary-row">
+					<span>Subtotal</span>
+					<span id="subtotalVal">₱0.00</span>
+				</div>
+				<div class="summary-row total">
+					<span>TOTAL</span>
+					<span id="totalVal">₱0.00</span>
+				</div>
+				<button class="checkout-btn" onclick="processCheckout()">Pay Now</button>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- External Script File -->
+	<script src="script.js"></script>
+</body>
+</html>
