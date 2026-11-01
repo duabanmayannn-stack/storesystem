@@ -9,8 +9,6 @@
 </head>
 <body>
 
-	</div>
-
 	<!-- Main POS Container -->
 	<div class="pos-container">
 
@@ -448,7 +446,7 @@
 					<button class="add-btn" onclick="addToCart('Champion Bar', 10)"><i class="fa-solid fa-plus"></i></button>
 				</div>
 
-						<div class="item-card" data-category="Laundry">
+				<div class="item-card" data-category="Laundry">
 					<div class="card-info">
 						<h3>Safe Guard Jumbo</h3>
 						<p class="item-price">₱32.00</p>
@@ -456,7 +454,7 @@
 					<button class="add-btn" onclick="addToCart('Safe Guard Jumbo', 32)"><i class="fa-solid fa-plus"></i></button>
 				</div>
 
-						<div class="item-card" data-category="Laundry">
+				<div class="item-card" data-category="Laundry">
 					<div class="card-info">
 						<h3>Bioderm</h3>
 						<p class="item-price">₱20.00</p>
@@ -499,8 +497,7 @@
 
 			<!-- Total Summary -->
 			<div class="cart-summary">
-				<div class=
-				"summary-row">
+				<div class="summary-row">
 					<span>Subtotal</span>
 					<span id="subtotalVal">₱0.00</span>
 				</div>
@@ -508,6 +505,17 @@
 					<span>TOTAL</span>
 					<span id="totalVal">₱0.00</span>
 				</div>
+
+				<!-- Cash Input & Change Display Added -->
+				<div class="summary-row" style="margin-top: 10px; align-items: center;">
+					<span>Cash Given:</span>
+					<input type="number" id="cashInput" placeholder="0.00" oninput="calculateChange()" style="width: 110px; padding: 6px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; text-align: right;">
+				</div>
+				<div class="summary-row" style="font-weight: bold; color: #2e7d32;">
+					<span>Change:</span>
+					<span id="changeVal">₱0.00</span>
+				</div>
+
 				<button class="checkout-btn" onclick="processCheckout()">Pay Now</button>
 			</div>
 		</div>
